@@ -15,9 +15,10 @@ This Flutter application showcases a user-friendly interface for browsing and pu
 ![Screenshot 2](/Screenshot2.png)
 ![Screenshot 3](/Screenshot3.png)
 ![Screenshot 4](/Screenshot4.png)
-
-<img src="/Screenshot2.png" width="400" height="900" alt="Image Description">; <img src="/Screenshot2.png" width="400" height="900" alt="Image Description">
-
+<div style="display: flex; align-items: center">
+    <img src="/Screenshot1.png" width="350" height="800" alt="Image Description">
+    <img src="/Screenshot2.png" width="350" height="800" alt="Image Description">
+</div>
 ## Getting Started
 
 ### Prerequisites
