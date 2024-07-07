@@ -3,6 +3,7 @@ gradle-wrapper.jar
 /captures/
 /gradlew
 /gradlew.bat
+/.env
 /local.properties
 GeneratedPluginRegistrant.java
 

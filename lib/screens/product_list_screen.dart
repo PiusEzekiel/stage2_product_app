@@ -1,5 +1,6 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:stage2_product_app/models/product.dart';
 import 'package:stage2_product_app/services/timbu_api_service.dart';
 
@@ -17,7 +18,8 @@ class _ProductListScreenState extends State<ProductListScreen> {
   bool hasError = false;
   String errorMessage = '';
   String? organizationId; // Replace with your organization ID
-  final String imageBaseUrl = 'https://api.timbu.cloud/images/';
+  // final String imageBaseUrl = 'https://api.timbu.cloud/images/';
+  final String? imageBaseUrl = dotenv.env['imageBaseUrl'];
 
   @override
   void initState() {
@@ -107,7 +109,7 @@ class _ProductListScreenState extends State<ProductListScreen> {
                             if (product.photos.isNotEmpty) {
                               final firstPhoto = product.photos[0];
                               final fullImageUrl =
-                                  imageBaseUrl + firstPhoto.url!;
+                                  imageBaseUrl! + firstPhoto.url!;
                               return Material(
                                 elevation: 3,
                                 color: Colors.white,

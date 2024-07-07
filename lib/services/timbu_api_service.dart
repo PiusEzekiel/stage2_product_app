@@ -1,12 +1,15 @@
+import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:http/http.dart' as http;
 import 'package:stage2_product_app/models/product.dart';
 
 import 'dart:convert';
 
 class TimbuApiService {
-  final String _apiKey = 'cdea3e60c982437ca0bf3e254d7e39d620240706132400564359';
+  final String _apiKey = dotenv.env['Api_Key']!;
+  // final String _apiKey = 'cdea3e60c982437ca0bf3e254d7e39d620240706132400564359';
   final String _appId = '0V43DCDJIRHEQH3';
-  final String _baseUrl = 'https://api.timbu.cloud';
+  final String _baseUrl = dotenv.env['Base_Url']!;
+  // final String _baseUrl = 'https://api.timbu.cloud';
 
   Future<List<Product>> fetchProducts({
     required String organizationId,
