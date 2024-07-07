@@ -11,8 +11,9 @@ This Flutter application showcases a user-friendly interface for browsing and pu
 
 ## Screenshots
 
-<div style="display: flex; align-items: center">
+<div style="display: inlign-flex; align-items: center">
     <img src="/Screenshot1.png" width="300" height="650" alt="Image Description">
+    <span style="margin-left: 30px;">&nbsp;</span>
     <img src="/Screenshot2.png" width="300" height="650" alt="Image Description">
 </div>
 <!-- <div style="display: flex; align-items: center">
