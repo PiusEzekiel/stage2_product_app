@@ -60,17 +60,36 @@ class Photo {
   }
 }
 
+// class Price {
+//   final String? currencyCode;
+//   final double? amount;
+
+//   Price({this.currencyCode, this.amount});
+//   // bool get isNegative => amount != null && amount! < 0;
+
+//   factory Price.fromJson(Map<String, dynamic> json) {
+//     return Price(
+//       currencyCode: json['currencyCode'] as String?,
+//       amount: json['amount'] as double?,
+//     );
+//   }
+// }
 class Price {
   final String? currencyCode;
-  final double? amount;
+  final double? amount; // Assuming you want to take the first price value
 
   Price({this.currencyCode, this.amount});
-  bool get isNegative => amount != null && amount! < 0;
 
   factory Price.fromJson(Map<String, dynamic> json) {
+    // Extract currency code
+    String? currencyCode = json.keys.first;
+
+    // Extract the first price value (assuming it's always present)
+    double? amount = json[currencyCode]?.first as double?;
+
     return Price(
-      currencyCode: json['currencyCode'] as String?,
-      amount: json['amount'] as double?,
+      currencyCode: currencyCode,
+      amount: amount,
     );
   }
 }

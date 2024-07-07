@@ -208,27 +208,43 @@ class ProductDetailsScreen extends StatelessWidget {
               ),
               itemCount: product.photos.length,
               itemBuilder: (context, index) {
-                return CachedNetworkImage(
-                  imageUrl: product.photos[index].url!,
-                  placeholder: (context, url) =>
-                      const CircularProgressIndicator(),
-                  errorWidget: (context, url, error) => const Icon(Icons.error),
-                );
+                final String imageBaseUrl = 'https://api.timbu.cloud/images/';
+                final firstPhoto = product.photos[0];
+                final fullImageUrl = imageBaseUrl + firstPhoto.url!;
+                return Image.network(
+                      fullImageUrl,
+                      errorBuilder: (context, error, stackTrace) {
+                        return const Icon(Icons.error);
+                      },
+                      width: 80, // Adjust image width
+                      height: 80, // Adjust image height
+                      fit: BoxFit.fill, // Ensure image covers the space
+                    ) ??
+                    const Icon(Icons.image_not_supported)!;
               },
             ),
             const SizedBox(height: 16.0),
             Text(
-              product.description!,
+              product.description ?? 'No description',
               style: const TextStyle(fontSize: 16.0),
             ),
             const SizedBox(height: 16.0),
-            Text(
-              '\$${product.currentPrice}',
-              style: const TextStyle(
-                fontSize: 24.0,
-                fontWeight: FontWeight.bold,
-              ),
-            ),
+            product.currentPrice.isNotEmpty
+                ? Text(
+                    'Price: \$${product.currentPrice[0].amount ?? 0.0}',
+                    style: const TextStyle(
+                      fontSize: 16.0,
+                      fontWeight: FontWeight.w500,
+                      color: Colors.red, // Make price slightly bold
+                    ),
+                  )
+                : const Text(
+                    'Price: Not Available',
+                    style: TextStyle(
+                      fontSize: 16.0,
+                      color: Colors.grey, // Make unavailable price grey
+                    ),
+                  ),
           ],
         ),
       ),
