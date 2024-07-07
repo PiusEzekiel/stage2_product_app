@@ -12,13 +12,14 @@ This Flutter application showcases a user-friendly interface for browsing and pu
 ## Screenshots
 
 <div style="display: flex; align-items: center">
-    <img src="/Screenshot1.png" width="350" height="800" alt="Image Description">
-    <img src="/Screenshot2.png" width="350" height="800" alt="Image Description">
+    <img src="/Screenshot1.png" width="300" height="650" alt="Image Description">
+    <h6>-<h6>
+    <img src="/Screenshot2.png" width="300" height="650" alt="Image Description">
 </div>
-<div style="display: flex; align-items: center">
+<!-- <div style="display: flex; align-items: center">
     <img src="/Screenshot3.png" width="350" height="800" alt="Image Description">
     <img src="/Screenshot4.png" width="350" height="800" alt="Image Description">
-</div>
+</div> -->
 
 ## Getting Started
 
