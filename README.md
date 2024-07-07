@@ -17,12 +17,12 @@ This Flutter application showcases a user-friendly interface for browsing and pu
 ![Screenshot 4](/Screenshot4.png) -->
 <div style="display: flex; align-items: center">
     <img src="/Screenshot1.png" width="350" height="800" alt="Image Description">
-    <h4>--</h4>
+    <h4>-</h4>
     <img src="/Screenshot2.png" width="350" height="800" alt="Image Description">
 </div>
 <div style="display: flex; align-items: center">
     <img src="/Screenshot3.png" width="350" height="800" alt="Image Description">
-    <h4>--</h4>
+    <h4>-</h4>
     <img src="/Screenshot4.png" width="350" height="800" alt="Image Description">
 </div>
 
