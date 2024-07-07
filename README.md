@@ -10,10 +10,10 @@ This Flutter application showcases a user-friendly interface for browsing and pu
 * **Refresh Functionality:**  Refresh the product list to get the latest updates.
 
 ## Screenshots
-![Screenshot 1](screenshot1.png)
-![Screenshot 2](screenshot2.png)
-![Screenshot 3](screenshot3.png)
-![Screenshot 4](screenshot4.png)
+![Screenshot 1](/Screenshot1.png)
+![Screenshot 2](/Screenshot2.png)
+![Screenshot 3](/Screenshot3.png)
+![Screenshot 4](/Screenshot4.png)
 
 ## Getting Started
 
