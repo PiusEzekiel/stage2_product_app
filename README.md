@@ -13,7 +13,6 @@ This Flutter application showcases a user-friendly interface for browsing and pu
 
 <div style="display: flex; align-items: center">
     <img src="/Screenshot1.png" width="300" height="650" alt="Image Description">
-    <h6>-<h6>
     <img src="/Screenshot2.png" width="300" height="650" alt="Image Description">
 </div>
 <!-- <div style="display: flex; align-items: center">
