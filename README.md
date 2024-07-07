@@ -11,14 +11,21 @@ This Flutter application showcases a user-friendly interface for browsing and pu
 
 ## Screenshots
 
-![Screenshot 1](/Screenshot1.png)
+<!-- ![Screenshot 1](/Screenshot1.png)
 ![Screenshot 2](/Screenshot2.png)
 ![Screenshot 3](/Screenshot3.png)
-![Screenshot 4](/Screenshot4.png)
+![Screenshot 4](/Screenshot4.png) -->
 <div style="display: flex; align-items: center">
     <img src="/Screenshot1.png" width="350" height="800" alt="Image Description">
+    <h4>--</h4>
     <img src="/Screenshot2.png" width="350" height="800" alt="Image Description">
 </div>
+<div style="display: flex; align-items: center">
+    <img src="/Screenshot3.png" width="350" height="800" alt="Image Description">
+    <h4>--</h4>
+    <img src="/Screenshot4.png" width="350" height="800" alt="Image Description">
+</div>
+
 ## Getting Started
 
 ### Prerequisites
