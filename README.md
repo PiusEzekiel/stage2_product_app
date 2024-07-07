@@ -16,7 +16,7 @@ This Flutter application showcases a user-friendly interface for browsing and pu
 ![Screenshot 3](/Screenshot3.png)
 ![Screenshot 4](/Screenshot4.png)
 
-<img src="/Screenshot2.png" width="200" height="150" alt="Image Description">
+<img src="/Screenshot2.png" width="400" height="900" alt="Image Description">; <img src="/Screenshot2.png" width="400" height="900" alt="Image Description">
 
 ## Getting Started
 
