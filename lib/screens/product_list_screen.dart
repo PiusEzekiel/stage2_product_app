@@ -1,4 +1,3 @@
-import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:stage2_product_app/models/product.dart';
@@ -18,7 +17,7 @@ class _ProductListScreenState extends State<ProductListScreen> {
   bool hasError = false;
   String errorMessage = '';
   String? organizationId; // Replace with your organization ID
-  // final String imageBaseUrl = 'https://api.timbu.cloud/images/';
+
   final String? imageBaseUrl = dotenv.env['imageBaseUrl'];
 
   @override
@@ -50,7 +49,7 @@ class _ProductListScreenState extends State<ProductListScreen> {
         });
       }
     } catch (error) {
-      print('Error fetching products: $error');
+      // print('Error fetching products: $error');
       setState(() {
         isLoading = false;
         hasError = true;
@@ -63,11 +62,30 @@ class _ProductListScreenState extends State<ProductListScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        leading: Builder(
+          builder: (BuildContext context) {
+            return IconButton(
+              onPressed: () {
+                Scaffold.of(context).openDrawer(); // Open the drawer
+              },
+              icon: const Icon(Icons.menu), // Or use a hamburger icon
+            );
+          },
+        ),
         title: const Center(
-            child: Text(
-          'Timbu Products',
-          style: TextStyle(color: Colors.white),
-        )),
+          child: Text(
+            'Timbu Products',
+            style: TextStyle(color: Colors.white),
+          ),
+        ),
+        actions: [
+          IconButton(
+            onPressed: () {
+              // Navigate to cart screen
+            },
+            icon: const Icon(Icons.shopping_cart),
+          ),
+        ],
         backgroundColor: Colors.blueGrey.shade600,
       ),
       body: RefreshIndicator(
@@ -104,7 +122,7 @@ class _ProductListScreenState extends State<ProductListScreen> {
                           itemCount: products.length,
                           itemBuilder: (context, index) {
                             final product = products[index];
-                            print(product); // Print the product to the console
+                            // print(product); // Print the product to the console
 
                             if (product.photos.isNotEmpty) {
                               final firstPhoto = product.photos[0];
@@ -133,7 +151,7 @@ class _ProductListScreenState extends State<ProductListScreen> {
                                           CrossAxisAlignment.start,
                                       children: [
                                         ClipRRect(
-                                          borderRadius: BorderRadius.only(
+                                          borderRadius: const BorderRadius.only(
                                             topLeft: Radius.circular(20),
                                             topRight: Radius.circular(20),
                                           ), // Only top corners rounde
@@ -198,14 +216,14 @@ class _ProductListScreenState extends State<ProductListScreen> {
                                                     .red, // Make price slightly bold
                                               ),
                                             )),
-                                        Spacer(),
+                                        const Spacer(),
                                         Container(
                                           alignment: Alignment.bottomRight,
                                           child: IconButton(
                                             onPressed: () {
                                               // Add product to cart
                                             },
-                                            icon: Icon(
+                                            icon: const Icon(
                                               Icons.add_circle_outline,
                                               size: 30,
                                             ),
@@ -228,12 +246,12 @@ class _ProductListScreenState extends State<ProductListScreen> {
 class ProductDetailsScreen extends StatelessWidget {
   final Product product;
 
-  const ProductDetailsScreen({Key? key, required this.product})
-      : super(key: key);
+  const ProductDetailsScreen({super.key, required this.product});
 
   @override
   Widget build(BuildContext context) {
-    final String imageBaseUrl = 'https://api.timbu.cloud/images/';
+    final String imageBaseUrl = dotenv.env['imageBaseUrl']!;
+
     final firstPhoto = product.photos[0];
     final fullImageUrl = imageBaseUrl + firstPhoto.url!;
     return Scaffold(
@@ -318,7 +336,7 @@ class ProductDetailsScreen extends StatelessWidget {
                             color: Colors.blueGrey.shade900,
                           ),
                         ),
-                        Spacer(),
+                        const Spacer(),
                         Text(
                           '\$${product.currentPrice[0].amount ?? 0.0}',
                           style: const TextStyle(
@@ -336,7 +354,7 @@ class ProductDetailsScreen extends StatelessWidget {
                     //     vertical: 4,
                     //   ),
 
-                    SizedBox(
+                    const SizedBox(
                         height:
                             10), // Add some spacing between title and description
                     //description of the product
@@ -345,7 +363,7 @@ class ProductDetailsScreen extends StatelessWidget {
                       style: const TextStyle(fontSize: 22.0),
                     ),
 
-                    Spacer(),
+                    const Spacer(),
                     Center(
                       child: ElevatedButton(
                         onPressed: () {},
@@ -354,7 +372,7 @@ class ProductDetailsScreen extends StatelessWidget {
                           padding: const EdgeInsets.symmetric(
                               horizontal: 50, vertical: 10),
                         ),
-                        child: Text(
+                        child: const Text(
                           'Buy Now',
                           style: TextStyle(fontSize: 20, color: Colors.white),
                         ),
